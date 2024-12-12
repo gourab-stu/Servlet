@@ -1,4 +1,5 @@
 # JSP - Java Server-side Pages 
+
 ## Folder structure 
 ```
 .
@@ -21,3 +22,7 @@
     ├── p1.action.jsp
     └── p1.jsp
 ```
+
+## [Click here to download tomcat 11](https://dlcdn.apache.org/tomcat/tomcat-11/v11.0.2/bin/apache-tomcat-11.0.2.exe) 
+
+## [Click here to download JRE 21](https://builds.openlogic.com/downloadJDK/openlogic-openjdk-jre/21.0.5+11/openlogic-openjdk-jre-21.0.5+11-windows-x64.msi) 
