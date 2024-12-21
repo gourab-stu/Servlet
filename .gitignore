@@ -1,0 +1,9 @@
+# workspace settings
+.vscode/
+
+# prettier config files
+.prettierrc
+.prettierignore
+
+# generated CLASS files
+*.class
