@@ -6,7 +6,6 @@
 │   └── jsp
 │       ├── College
 │       ├── JDBC
-│       ├── SampleLoginPage
 │       └── WBSU
 └── WEB-INF
     ├── classes
