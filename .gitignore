@@ -7,3 +7,6 @@
 
 # generated CLASS files
 *.class
+
+# bash file to compile all servlets inside src/java
+compile.sh
