@@ -1,28 +1,44 @@
-# JSP - Java Server-side Pages 
-
-## Folder structure 
+## Understanding the Repository structure 
 ```
 .
-├── College
-│   ├── Factorial.jsp
-│   ├── p1.html
-│   ├── p2.jsp
-│   ├── p3.jsp
-│   ├── p4.jsp
-│   ├── p5.action.jsp
-│   ├── p5.jsp
-│   ├── p6.action.jsp
-│   ├── p6.jsp
-│   ├── p7.action.jsp
-│   └── p7.jsp
-├── SampleLoginPage
-│   ├── index.html
-│   └── login.jsp
-└── WBSU
-    ├── p1.action.jsp
-    └── p1.jsp
+├── src
+│   ├── java
+│   └── jsp
+│       ├── College
+│       ├── JDBC
+│       ├── SampleLoginPage
+│       └── WBSU
+└── WEB-INF
+    ├── classes
+    └── lib
+
+```
+- All <b>servlets (.java files)</b> are in `src/java` folder
+- All <b>JSP files</b> are in `src/jsp` folder
+- All <b>compiled servlets</b> (.class files) are in `WEB-INF/classes` folder
+- The `lib` folder contains all <b>JAR files</b> required for servlets (like <b>servlet-api.jar</b>, <b>mysql and oracle JDBC drivers</b>)
+
+
+## Steps to execute servlet
+- <b>Step 1:</b> Create a folder in the `webapps` directory of the <b>apache-tomcat installation</b> and make a structure like this:
+```
+.
+├── index.html
+└── WEB-INF
+    ├── classes
+    └── web.xml
 ```
 
-## [Click here to download tomcat 11](https://dlcdn.apache.org/tomcat/tomcat-11/v11.0.2/bin/apache-tomcat-11.0.2.exe) 
+- <b>Step 2:</b> Write your servlets (.java file) anywhere in the folder, just put the compiled bytecode (.class) files in the `WEB-INF/classes/` folder.
 
-## [Click here to download JRE 21](https://builds.openlogic.com/downloadJDK/openlogic-openjdk-jre/21.0.5+11/openlogic-openjdk-jre-21.0.5+11-windows-x64.msi) 
+- <b>Step 3:</b> Map the servlets in the `web.xml` file.
+
+- <b>Step 4:</b> Start apache-tomcat, open browser and hit [here](127.0.0.1:8081) (considering the configured port is `8081`) and go to the servlet handler, see if it works.
+
+
+## Resources
+- [Click here to download tomcat 9](https://dlcdn.apache.org/tomcat/tomcat-11/v11.0.2/bin/apache-tomcat-11.0.2.exe)
+
+- [Click here to download JRE 17](https://builds.openlogic.com/downloadJDK/openlogic-openjdk-jre/17.0.13+11/openlogic-openjdk-jre-17.0.13+11-windows-x64.msi)
+
+- [Click here to download JDK 17](https://builds.openlogic.com/downloadJDK/openlogic-openjdk/17.0.13+11/openlogic-openjdk-17.0.13+11-windows-x64.msi)
