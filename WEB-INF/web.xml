@@ -1,4 +1,6 @@
 <web-app>
+
+    <!-- Servlet to display "Welcome user" -->
     <servlet>
         <servlet-name>servlet1</servlet-name>
         <servlet-class>HelloServlet</servlet-class>
@@ -7,12 +9,25 @@
         <servlet-name>servlet1</servlet-name>
         <url-pattern>/display</url-pattern>
     </servlet-mapping>
+
+    <!-- Servlet to Add two numbers -->
     <servlet>
         <servlet-name>addServlet</servlet-name>
         <servlet-class>AddServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>addServlet</servlet-name>
-        <url-pattern>/add</url-pattern>
+        <url-pattern>/static/add</url-pattern>
     </servlet-mapping>
+
+    <!-- Servlet to fetch data from table -->
+    <servlet>
+        <servlet-name>fetchData</servlet-name>
+        <servlet-class>FetchData</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>fetchData</servlet-name>
+        <url-pattern>/static/fetch</url-pattern>
+    </servlet-mapping>
+
 </web-app>
