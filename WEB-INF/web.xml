@@ -1,5 +1,10 @@
 <web-app>
 
+    <!-- Welcome file -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
     <!-- Servlet to display "Welcome user" -->
     <servlet>
         <servlet-name>servlet1</servlet-name>
@@ -28,6 +33,16 @@
     <servlet-mapping>
         <servlet-name>fetchData</servlet-name>
         <url-pattern>/static/fetch</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet to insert data into table -->
+    <servlet>
+        <servlet-name>insertData</servlet-name>
+        <servlet-class>InsertData</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>insertData</servlet-name>
+        <url-pattern>/static/insert</url-pattern>
     </servlet-mapping>
 
 </web-app>

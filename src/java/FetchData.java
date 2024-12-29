@@ -7,10 +7,10 @@ import javax.servlet.http.*;
 import env.db.MySQLDatabase;
 
 public class FetchData extends HttpServlet {
-    public void doGet(HttpServletRequest reqest, HttpServletResponse response) throws ServletException, IOException {
+    public void showTable(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         MySQLDatabase db = new MySQLDatabase();
         PrintWriter pw = response.getWriter();
-        String tname = reqest.getParameter("tname");
+        String tname = request.getParameter("tname");
         String url = "jdbc:mysql://" + db.HOST + ":" + db.PORT + "/" + db.NAME;
         String sql = "SELECT * FROM " + tname;
         String pname;
@@ -22,9 +22,9 @@ public class FetchData extends HttpServlet {
             Statement stmt = conn.createStatement();
             ResultSet resultSet = stmt.executeQuery(sql);
             pw.println("<h3>Table retrieved!</h3>");
-            pw.println("<table border='2'>");
+            pw.println("<table border='1' width='25%' style=\"text-align:center\">");
             pw.println("<thead>");
-            pw.println("<tr> <td><b>pid</b></td> <td><b>pname</b></td> <td><b>runs</b></td> </tr>");
+            pw.println("<tr> <th><b>pid</b></th> <th><b>pname</b></th> <th><b>runs</b></th> </tr>");
             pw.println("</thead>");
             pw.println("<tbody>");
             while (resultSet.next()) {
@@ -35,9 +35,16 @@ public class FetchData extends HttpServlet {
             }
             pw.println("</tbody>");
             pw.println("</table>");
+            conn.close();
         } catch (Exception exception) {
             pw.println(exception.getMessage());
         }
         pw.close();
+    }
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        showTable(request, response);
+    }
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        showTable(request, response);
     }
 }

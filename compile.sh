@@ -1,1 +1,1 @@
-javac -d "WEB-INF/classes" -classpath "WEB-INF/lib/*" src/java/*.java
+rm WEB-INF/classes/*.class; javac -d "WEB-INF/classes" -classpath "WEB-INF/lib/*" src/java/*.java
