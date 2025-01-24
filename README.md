@@ -6,7 +6,9 @@
 │   └── jsp
 │       ├── College
 │       ├── JDBC
+│       ├── pyq.2023
 │       └── WBSU
+├── static
 └── WEB-INF
     ├── classes
     └── lib
