@@ -21,8 +21,9 @@ public class FetchData extends HttpServlet {
             Connection conn = DriverManager.getConnection(url, db.USER, db.PASSWORD);
             Statement stmt = conn.createStatement();
             ResultSet resultSet = stmt.executeQuery(sql);
+            pw.println("<body style=\"font-size: 40px;\">");
             pw.println("<h3>Table retrieved!</h3>");
-            pw.println("<table border='1' width='25%' style=\"text-align:center\">");
+            pw.println("<table border='1' width='100%' style=\"text-align:center;font-size:40px;\">");
             pw.println("<thead>");
             pw.println("<tr> <th><b>pid</b></th> <th><b>pname</b></th> <th><b>runs</b></th> </tr>");
             pw.println("</thead>");
@@ -35,6 +36,7 @@ public class FetchData extends HttpServlet {
             }
             pw.println("</tbody>");
             pw.println("</table>");
+            pw.println("</body>");
             conn.close();
         } catch (Exception exception) {
             pw.println(exception.getMessage());
